@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="html-form">
+		<meta name="key-words" content="html-form,input,taxt-area,input-types,select,data-list">
+		<meta name="author" content="Berners-Lee">
+		<meta name="view-port" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="refresh" content="40">
+		<title> log in page</title>
+		<style>
+		body{
+		margin:0 350px;
+		}
+		.container{
+		width:60%;
+		display:flex;
+		
+		}
+		div{
+		width:50%;
+		padding:10px;
+		}
+		h3{
+		position:relative;
+		}
+		h3::after{
+		content:"";
+		border-top:2px solid black;
+		position:absolute;
+		width:40px;
+		top:38px;
+		left:6px;
+		}
+		input{
+		padding:10px;
+		}
+		
+		span{
+		color:red;
+		}
+		</style>
+    </head>
+	<body>
+	<section class="container">
+		
+	   <div> 
+	   <section>
+	       <h1>Login</h1>
+		   <h3> or <span> create an account</span></h3>
+		    <br><br> <br><br>
+	  <form id="form">
+	       <label for="user">USER-NAME:</label>
+		   <br><br>
+		   <input type="text" id="user" placeholder="Name"><br><br>
+		   <label for="password">PASSWORD:</label>
+		    <br><br>
+		   <input type="password" id="password"><br><br>
+		   <button style="margin-left:30%;margin-top:30px;" id="submit">CONTINUE</button>
+		   <p id="result"></p>
+		   </form>
+	   </section>
+	   </div>
+	   <div>
+			   <img src="images/Image-login.webp" width="100%">
+				
+		</div>
+	</section>
+	<script>
+	 let form=document.querySelector("form");
+  form.addEventListener('submit',function(s){
+	  s.preventDefault();
+	let user=document.querySelector("#user").value;
+	   let password=document.querySelector("#password").value;
+	      if((user=='')||(password=='')){
+			 result.innerText="please enter letters and submit " ;
+               result.style.color="red";
+		  }
+		   else if((!isNaN(user))){
+			  result.innerText="Enters only letters";
+			  result.style.color="red"; 
+		  }
+		 else{
+		 result.innerText="welcome";
+		   result.style.color="green";
+		 }
+	});
+	</script>
+	
+	</body>
+</html>
